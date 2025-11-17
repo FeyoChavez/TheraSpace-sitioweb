@@ -1,0 +1,237 @@
+/* Custom Property */
+:root {
+  /* clrs */
+  --black-clr: #000000;
+  --hero-bg: #0e1122;
+  --white-clr: #ffffff;
+  --black-clr-2: #333333;
+  --primary-crl: #099e54;
+  --primary-crl-2: #26bf78;
+  --primary-crl-3: #dbf4e7;
+  --primary-crl-4: #f3fcf7;
+  --body-font-clr: #646465;
+  --gray-clr: #d9d9d9;
+  --gray-clr-2: #d9d9d980;
+  --gray-clr-3: #e9e9e9;
+  --secondary-clr: #975fff;
+  --secondary-clr-2: #e1d6f5;
+  --secondary-clr-3: #f6f3fe;
+  --bg-clr: #f7f8fc;
+  --bg-clr-2: hsla(231, 43%, 9%, 0.75);
+
+  /* Typography */
+  --ff-poppins: "Poppins", sans-serif;
+
+  /* border radius */
+  --rounded-sm: 6px;
+  --rounded-md: 12px;
+  --rounded-lg: 25px;
+  --rounded-xl: 50px;
+  --rounded-full: 50%;
+
+  /* Transitions */
+  --transition-1: 0.3s ease;
+  --transition-2: 0.5s ease;
+
+  /* section padding */
+  --padding: 120px;
+}
+
+/* Reset */
+*,::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: var(--ff-poppins);
+}
+
+body{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--body-font-clr);
+    background: var(--bg-clr);
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a,input,img,span,button{
+    display: block;
+}
+
+button,input,textarea,select{
+    border: none;
+    background: none;
+    outline: none;
+    font: inherit;
+}
+
+button{
+    cursor: pointer;
+}
+
+input, select, textarea{
+    width: 100%;
+}
+
+h1,h2,h3,h4{
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--primary-crl);
+    border-radius: var(--rounded-sm);
+}
+
+::-webkit-scrollbar-thumb{
+    border-inline: 2px solid #0003;
+    background: transparent;
+}
+
+/* clases reusables */
+.container{
+    padding-inline: 1.6rem;
+    margin-inline: auto;
+}
+
+/* header */
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-block: 2.5rem;
+    color: var(--white-clr);
+    transition: var(--transition-1);
+    z-index: 4;
+}
+
+.header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.nav-list{
+    position: absolute;
+    top: 6rem;
+    right: 2rem;
+    background: var(--primary-crl);
+    padding: 2rem;
+    border-radius: var(--rounded-md);
+    color: var(--white-clr);
+    min-width: 200px;
+    display: grid;
+    gap: 1.5rem;
+    transform-origin: top right;
+     
+    scale: 0.4;
+    opacity: 0;
+    visibility: hidden; 
+    transition: var(--transition-1);
+}
+
+.nav-list.active{
+    scale: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-list a{
+    transition: var(--transition-1);
+}
+
+.nav-list a:is(:hover, :focus){
+    opacity: 0.8;
+}
+.nav-toggle{
+    font-size: 3rem;
+    color: inherit;
+}
+
+.nav-toggle.active .menu,
+.nav-toggle .close{
+    display: none;
+}
+
+.nav-toggle .menu,
+.nav-toggle.active .close{
+    display: block;
+}
+
+.logo{
+    font-size: 3.3rem;
+    color: inherit;
+    font-weight: 600;
+}
+
+/* Hero */
+.hero{
+    background: var(--hero-bg);
+    padding-block: var(--padding);
+}
+
+.hero .container{
+    display: grid;
+    gap: 5rem;
+    color: var(--white-clr);
+}
+
+.hero-title{
+    font-size: 3.8rem;
+    text-wrap: balance;
+}
+
+.hero-text{
+    color: var(--gray-clr);
+    margin-block: 1.2rem 4rem;
+}
+
+.hero-btn{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem; /* distancia entre el texto y el arrow */
+    background: var(--primary-crl);
+    padding: 1.9rem 3.2rem;
+    border-radius: var(--rounded-md);
+    transition: var(--transition-1);
+}
+
+.hero-btn:is(:hover,:focus){
+    opacity: 0.8;
+}
+
+.hero-btn .circle{
+    background: var(--white-clr);
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--rounded-full);
+    color: var(--primary-crl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
