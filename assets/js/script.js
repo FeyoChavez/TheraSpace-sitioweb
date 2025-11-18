@@ -14,7 +14,8 @@ window.addEventListener('scroll', function(){
     if(this.scrollY > 50){
         headerEle.classList.add('active');
     } else {
-        headerEle.classList.remove('active')
+        headerEle.classList.remove('active') 
+        
     }
 })
 
