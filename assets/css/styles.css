@@ -116,6 +116,40 @@ h1,h2,h3,h4{
     margin-inline: auto;
 }
 
+.section{
+    padding-top: var(--padding); /* espacio entre imagen y el about */
+}
+
+.subtitle{
+    color: var(--primary-crl);
+    font-size: 1.4rem;
+}
+
+.title{
+    font-size: 3rem;
+    color: var(--black-clr);
+    text-wrap: balance;
+}
+
+.btn{
+    background: var(--primary-crl);
+    padding: 1.9rem 3.2rem;
+    color: var(--white-clr);
+    max-width: max-content;
+    border-radius: var(--rounded-md);
+    transition: var(--transition-1);
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+.card-title{
+    font-size: 2rem;
+    color: var(--black-clr);
+    margin-top: 1.2rem;
+}
+
 /* header */
 .header{
     width: 100%;
@@ -216,6 +250,7 @@ h1,h2,h3,h4{
     gap: 1.2rem; /* distancia entre el texto y el arrow */
     background: var(--primary-crl);
     padding: 1.9rem 3.2rem;
+    color: var(--white-clr);
     border-radius: var(--rounded-md);
     transition: var(--transition-1);
 }
@@ -234,4 +269,45 @@ h1,h2,h3,h4{
     align-items: center;
     justify-content: center;
     font-weight: 600;
+}
+
+/* About */
+.about .title{
+    margin-bottom: 3rem;
+}
+
+.about .wrapper{
+    display: grid;
+    gap: 5rem; /* gap entre el btn y la img de about */
+}
+
+.about-content{
+    display: grid;
+    gap: 3rem; /* gap entre el btn y los li*/
+}
+
+.about-content :is(.text, ul){
+    margin-block: 1.2rem;
+}
+
+.about-content li{
+    display: flex;
+    gap: 0.8rem; /* alinea el check con los li*/
+}
+
+.about-content .check-mark{
+    color: var(--primary-crl);
+}
+
+/* Servicios */
+.services .card-wrapper{
+    display: grid;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.services .card-wrapper .card:nth-child(2n+1){
+    background: var(--secondary-clr-3);
+    border: 1px solid var(--secondary-clr);
+    padding: 2rem;
 }
